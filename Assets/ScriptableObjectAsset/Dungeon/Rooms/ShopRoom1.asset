@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683e020f4ef863c4a8365333dd6f0dba, type: 3}
+  m_Name: ShopRoom1
+  m_EditorClassIdentifier: 
+  guid: b9bfb2250857f9f4aa032e432b48e637
+  prefab: {fileID: 2404915521005146529, guid: 4178526519c17cf40b121caa46415d61, type: 3}
+  previousPrefab: {fileID: 2404915521005146529, guid: 4178526519c17cf40b121caa46415d61,
+    type: 3}
+  roomNodeType: {fileID: 11400000, guid: 880db8560d7c71f48aa91cb257504695, type: 2}
+  lowerBounds: {x: -15, y: -8}
+  upperBounds: {x: 14, y: 9}
+  doorwayList:
+  - position: {x: -15, y: -1}
+    orientation: 2
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: -15, y: 3}
+    doorwayCopyTileWidth: 4
+    doorwayCopyTileHeight: 7
+    isConnected: 0
+    isUnavailable: 0
+  - position: {x: 14, y: -1}
+    orientation: 1
+    doorPrefab: {fileID: 0}
+    doorwayStartCopyPosition: {x: 11, y: 3}
+    doorwayCopyTileWidth: 4
+    doorwayCopyTileHeight: 7
+    isConnected: 0
+    isUnavailable: 0
+  spawnPositionArray: []
