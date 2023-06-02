@@ -456,6 +456,9 @@ public class DungeonBuilder : SingletonMonoBehaviour<DungeonBuilder>
         {
             room.parentRoomID = "";
             room.isPreviouslyVisited = true;
+
+            //Set Entrance in game manager
+            GameManager.Instance.SetCurrentRoom(room);
         }
         else
         {

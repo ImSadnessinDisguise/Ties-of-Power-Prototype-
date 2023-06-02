@@ -25,8 +25,16 @@ public class GameResources : MonoBehaviour
     #region Tooltip
     [Tooltip("Populate with dungeon RoomNodeTypeList")]
     #endregion
-
     public RoomNodeTypeListSO roomNodeTypeList;
+
+    #region Header PLAYER
+    [Space(10)]
+    [Header("Player")]
+    #endregion
+    #region Tooltip
+    [Tooltip("used to reference player in between scenes")]
+    #endregion
+    public CurrentPlayerSO currentPlayer;
 
     #region Header Materials
     [Space(10)]

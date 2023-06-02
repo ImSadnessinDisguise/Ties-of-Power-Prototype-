@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public IdleState idleState { get; private set; }
     public MoveState moveState { get; private set; }
     public CombatState combatState { get; private set; }
+    [HideInInspector] public PlayerDetailsSO playerDetails;
+    [HideInInspector] public Health health;
 
     public Animator Anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -25,6 +27,18 @@ public class Player : MonoBehaviour
         moveState = new MoveState(this, StateMachine, playerData, "move");
         combatState = new CombatState(this, StateMachine, playerData, "combat");
     }
+
+    /*public void Initialize(PlayerDetailsSO playerDetails)
+    {
+        this.playerDetails = playerDetails;
+
+        SetPlayerHealth();
+    }
+
+    private void SetPlayerHealth()
+    {
+        health.SetStartingHealth(playerDetails.playerHealthAmount);
+    }*/
 
     private void Start()
     {

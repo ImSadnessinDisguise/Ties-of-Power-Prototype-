@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5aaa736cd1726849b5934dd61133d57
+guid: af3408da138588c48a4aed0757f384a5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,169 +104,232 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX Struct_0
+      name: Main base_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 384
-        width: 64
-        height: 96
+        x: 70
+        y: 904
+        width: 118
+        height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19abeb63ff7c4314b8f200eb657b02b3
-      internalID: 1164581547
+      spriteID: bc3e6d09418015b42a3f8a46a5fb6dbf
+      internalID: 2047451843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_1
+      name: Main base_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
-        width: 65
-        height: 96
+        x: 401
+        y: 915
+        width: 130
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 854db87a016738d419a502440f359936
-      internalID: -1784195467
+      spriteID: 96061721ae9e4d94596b574199785baa
+      internalID: -658215049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_2
+      name: Main base_2
       rect:
         serializedVersion: 2
-        x: 224
-        y: 384
-        width: 65
-        height: 96
+        x: 780
+        y: 611
+        width: 360
+        height: 375
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54ff5c4aea3761d4a865e7b137794e9d
-      internalID: 983599142
+      spriteID: d6f538b877ac4924791e48641d6273c5
+      internalID: -254053524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_3
+      name: Main base_3
       rect:
         serializedVersion: 2
-        x: 408
-        y: 421
-        width: 80
-        height: 64
+        x: 1453
+        y: 733
+        width: 357
+        height: 253
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3990df57a440c74791a75a8ea698f42
-      internalID: -581171827
+      spriteID: 67a51196fc4deee49aade393bf8b18db
+      internalID: 986100671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_4
+      name: Main base_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
-        width: 64
-        height: 96
+        x: 210
+        y: 795
+        width: 174
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f939f74c20d2f9c4d9746d14da774294
-      internalID: -289478163
+      spriteID: f7d0bcbcd573c1c47a15b8b67fb11058
+      internalID: -1595687222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_5
+      name: Main base_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
-        width: 65
-        height: 96
+        x: 73
+        y: 680
+        width: 122
+        height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a406d273e1cfa104b897765c5174ba07
-      internalID: -859870226
+      spriteID: 3cbd638734f84584ba7832673f38aee5
+      internalID: 308764928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_6
+      name: Main base_6
       rect:
         serializedVersion: 2
-        x: 224
-        y: 256
-        width: 65
-        height: 96
+        x: 395
+        y: 677
+        width: 110
+        height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9abd753ac8c4174eabb5dad6f6584e2
-      internalID: 961930437
+      spriteID: a390005627218ec4cb5e3cef04a380f7
+      internalID: 634958412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Struct_7
+      name: Main base_9
       rect:
         serializedVersion: 2
-        x: 416
-        y: 320
-        width: 64
-        height: 64
+        x: 70
+        y: 101
+        width: 268
+        height: 297
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f99860039978904ea5670dda7869545
-      internalID: 138344919
+      spriteID: 8aa7ef2670b43d94e935832ea6a15be8
+      internalID: 2019666771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main base_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 102
+        width: 243
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20909e9389e5954e85d9a1195105332
+      internalID: 892364165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main base_13
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 81
+        width: 295
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20374cb8c0931b4797963720633fd4a
+      internalID: 676276413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main base_14
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 152
+        width: 53
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb8d8421509a874a815e0bb8ddc635e
+      internalID: 1586021368
       vertices: []
       indices: 
       edges: []
@@ -274,7 +337,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 495eb97365f5bb04b830d3b8be1c5a07
+    spriteID: 795e183f8d26f264aba0523a42870388
     internalID: 0
     vertices: []
     indices: 
@@ -282,14 +345,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Struct_7: 138344919
-      TX Struct_4: -289478163
-      TX Struct_1: -1784195467
-      TX Struct_0: 1164581547
-      TX Struct_5: -859870226
-      TX Struct_3: -581171827
-      TX Struct_6: 961930437
-      TX Struct_2: 983599142
+      Main base_14: 1586021368
+      Main base_2: -254053524
+      Main base_8: -624524913
+      Main base_6: 634958412
+      Main base_11: 837714945
+      Main base_4: -1595687222
+      Main base_12: -2137141228
+      Main base_1: -658215049
+      Main base_5: 308764928
+      Main base_3: 986100671
+      Main base_13: 676276413
+      Main base_15: -489588080
+      Main base_0: 2047451843
+      Main base_7: 1350209572
+      Main base_9: 2019666771
+      Main base_10: 892364165
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
