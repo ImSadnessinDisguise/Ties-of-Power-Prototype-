@@ -59,7 +59,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         HandleGameState(); 
 
         //for testing
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             gameState = Gamestate.gameStarted;
         }
