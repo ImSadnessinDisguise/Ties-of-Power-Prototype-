@@ -13,7 +13,11 @@ public static class Settings
 
     //Highest number should be 3 as to not fail dungeon generation
     public const int maxChildCorridor = 3;
-     
 
+
+    #endregion
+
+    #region ASTAR PATHFINDING PARAMETERS
+    public const int defaultAstarMovementPenalties = 20;
     #endregion
 }

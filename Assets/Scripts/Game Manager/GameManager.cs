@@ -23,30 +23,30 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private Room currentRoom;
     private Room previousRoom;
     private PlayerDetailsSO playerDetails;
-    private Player player;
+    private mainPlayer player;
 
     [HideInInspector] public Gamestate gameState;
 
-    /*protected override void Awake()
+    protected override void Awake()
     {
         base.Awake();
 
         playerDetails = GameResources.Instance.currentPlayer.playerDetails;
 
         InstantiatePlayer();
-    }*/
+    }
 
     /// <summary>
     /// Create Player in scene at position
     /// </summary>
-   /* private void InstantiatePlayer()
+    private void InstantiatePlayer()
     {
         GameObject playerGameObject = Instantiate(playerDetails.playerPrefab);
 
-        player = playerGameObject.GetComponent<Player>();
+        player = playerGameObject.GetComponent<mainPlayer>();
 
         player.Initialize(playerDetails);
-    }*/
+    }
 
     private void Start()
     {
@@ -80,6 +80,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
     }
 
+    public mainPlayer GetPlayer()
+    {
+        return player;
+    }
     public void SetCurrentRoom(Room room)
     {
         previousRoom = currentRoom;
@@ -98,11 +102,11 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         }
 
         //set player position roughly mid room
-        //player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y
-            //+ currentRoom.upperBounds.y) / 2f, 0f);
+        player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y
+            + currentRoom.upperBounds.y) / 2f, 0f);
 
         // get nearest spawn point in room nearest to player
-       // player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
+        player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
     }
 
     public Room GetCurrentRoom()

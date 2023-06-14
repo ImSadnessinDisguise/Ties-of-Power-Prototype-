@@ -9,6 +9,7 @@ TagManager:
   - decorations2
   - collision
   - minimap
+  - MiniMap Tilemap
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - Room
   - wall
   - minimap
-  - 
-  - 
-  - 
+  - Player
+  - Camera 1
+  - Camera 2
   - 
   - 
   - 

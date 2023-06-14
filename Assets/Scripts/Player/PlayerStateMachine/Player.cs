@@ -27,19 +27,7 @@ public class Player : MonoBehaviour
         moveState = new MoveState(this, StateMachine, playerData, "move");
         combatState = new CombatState(this, StateMachine, playerData, "combat");
     }
-
-    /*public void Initialize(PlayerDetailsSO playerDetails)
-    {
-        this.playerDetails = playerDetails;
-
-        SetPlayerHealth();
-    }
-
-    private void SetPlayerHealth()
-    {
-        health.SetStartingHealth(playerDetails.playerHealthAmount);
-    }*/
-
+ 
     private void Start()
     {
         Anim = GetComponent<Animator>();

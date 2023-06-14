@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDetails_
   m_EditorClassIdentifier: 
   playerCharacterName: Haut
-  playerPrefab: {fileID: 2905637678444750504, guid: b0f78c15ce3409a4aabe447de6e3dccc,
+  playerPrefab: {fileID: 8204782286568556947, guid: b0f78c15ce3409a4aabe447de6e3dccc,
     type: 3}
   runtimeAnimatorController: {fileID: 9100000, guid: e851cc45823764c46afca08dceb65894,
     type: 2}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class GameResources : MonoBehaviour
 {
@@ -45,5 +46,27 @@ public class GameResources : MonoBehaviour
     #endregion
     public Material dimmedMaterial;
 
+    #region Header SPECIAL TILEMAP TILES
+    [Space(10)]
+    [Header("SPecial Tilemap Tiles")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Collsion tiles that the enemy can navigate to")]
+    #endregion
+    public TileBase[] enemyUnwalkableCollsionTilesArray;
+    #region Tooltip
+    [Tooltip("Prefered path for enemy navigation")]
+    #endregion
+    public TileBase preferredEnemyPathTile;
 
+    #region Validation
+#if UNITY_EDITOR
+    //validate the scriptable object details entered
+    private void OnValidate()
+    {
+        HelperUtilities.ValidateCheckNullValue(this, nameof(preferredEnemyPathTile), preferredEnemyPathTile);
+        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(enemyUnwalkableCollsionTilesArray), enemyUnwalkableCollsionTilesArray); 
+    }
+#endif
+    #endregion
 }
