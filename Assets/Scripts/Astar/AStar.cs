@@ -118,6 +118,12 @@ public static class AStar
                     //calculate new gcost for the neighbour
                     int newCostToNeighbour;
 
+                    // get movement penalty
+                    // unwalkable paths have a value of 0. Default penalty is set in
+                    // settings and applies to other grid squares
+                    int movementPenaltyForGridSpace = instantiatedRoom.aStarMovementPenalty[validNeighbourNode.gridPosition.x,
+                        validNeighbourNode.gridPosition.y];
+
                     newCostToNeighbour = currentNode.gCost + GetDistance(currentNode, validNeighbourNode);
                     bool isValidNeighbourNodeinOpenList = openNodeList.Contains(validNeighbourNode);
 
@@ -168,8 +174,11 @@ public static class AStar
         //get neighbour node
         Node neighbourNode = gridNodes.GetGridNode(neighbourNodeXPosition, neighbourNodeYPosition);
 
-        //if neighbour node in closed list then skip
-        if (closedNodeHashSet.Contains(neighbourNode))
+        //check for obstacle at location 
+        int movementPenaltyForGridSpace = instantiatedRoom.aStarMovementPenalty[neighbourNodeXPosition, neighbourNodeYPosition];    
+
+        //if neighbour node is in an obstacle or is in closed list then skip
+        if (movementPenaltyForGridSpace == 0 || closedNodeHashSet.Contains(neighbourNode))
         {
             return null;
         }

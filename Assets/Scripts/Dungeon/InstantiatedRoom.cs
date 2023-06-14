@@ -11,6 +11,7 @@ public class InstantiatedRoom : MonoBehaviour
     [HideInInspector] public Tilemap decoration1Tilemap;
     [HideInInspector] public Tilemap collisionTilemap;
     [HideInInspector] public Tilemap minimapTilemap;
+    [HideInInspector] public int[,] aStarMovementPenalty; 
     [HideInInspector] public Bounds roomColliderBounds;
 
     private BoxCollider2D boxCollider2D;
@@ -28,6 +29,8 @@ public class InstantiatedRoom : MonoBehaviour
         PopulateTilemapMemberVariables(roomGameobject);
 
         DisableCollisionTilemapRenderer();
+
+        AddObstacleAndPreferredPath();
     }
 
     private void PopulateTilemapMemberVariables(GameObject roomGameobject)
@@ -59,6 +62,43 @@ public class InstantiatedRoom : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Update Obstacles used by Astar Pathfinding
+    /// </summary>
+    private void AddObstacleAndPreferredPath()
+    {
+        //this array will be populated with wall obstacles
+        aStarMovementPenalty = new int[room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateUpperBounds.y - room.templateLowerBounds.y + 1];
+
+        //Loop through all grid squares
+        for (int x  = 0; x < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); x++)
+        {
+            for (int y = 0; y < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); y++)
+            {
+                //Set default movement penalty for grid squares
+                aStarMovementPenalty[x, y] = Settings.defaultAstarMovementPenalties;
+
+                //add obstacles for collision tiles enemy cant walk on
+                TileBase tile = collisionTilemap.GetTile(new Vector3Int(x + room.templateLowerBounds.x, y + room.templateLowerBounds.y, 0));
+
+                foreach (TileBase collisionTile in GameResources.Instance.enemyUnwalkableCollsionTilesArray)
+                {
+                    if (tile == collisionTile)
+                    {
+                        aStarMovementPenalty[x, y] = 0;
+                        break;
+                    }
+                }
+
+                //Add a preferred path for enemies (1 is the prefered path value, default value
+                //for a grid location is specified in the setting)
+                if (tile == GameResources.Instance.preferredEnemyPathTile)
+                {
+                    aStarMovementPenalty[x, y] = Settings.preferredPathAStarMovementPenalty;
+                }
+            }
+        }
+    }
 
     private void DisableCollisionTilemapRenderer()
     {

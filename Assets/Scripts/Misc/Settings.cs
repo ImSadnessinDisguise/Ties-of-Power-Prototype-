@@ -19,5 +19,12 @@ public static class Settings
 
     #region ASTAR PATHFINDING PARAMETERS
     public const int defaultAstarMovementPenalties = 20;
+    public const int preferredPathAStarMovementPenalty = 1;
     #endregion
+
+    #region ANIMATOR PARAMETERS
+    //Animator Parameters - Player
+    public static int isIdle = Animator.StringToHash("isIdle");
+    public static int isMoving = Animator.StringToHash("isMoving");
+    #endregion 
 }

@@ -9,7 +9,6 @@ public class EnemyDetailsSO : ScriptableObject
     [Space(10)]
     [Header("Base Enemy Details")]
     #endregion
-
     #region Tooltip
     [Tooltip("The name of the enemy")]
     #endregion
@@ -19,6 +18,11 @@ public class EnemyDetailsSO : ScriptableObject
     [Tooltip("The prefab for the enemy")]
     #endregion
     public GameObject enemyPrefab;
+
+    #region Tooltip 
+    [Tooltip("Distance to the player before the enemy starts chasing")]
+    #endregion
+    public float chaseDistance = 50f;
 
     #region Validation
 #if UNITY_EDITOR
