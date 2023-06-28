@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -26,6 +27,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private mainPlayer player;
 
     [HideInInspector] public Gamestate gameState;
+    [HideInInspector] public Gamestate previousGamestate;
+    private InstantiatedRoom bossRoom;
 
     protected override void Awake()
     {
@@ -48,8 +51,33 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         player.Initialize(playerDetails);
     }
 
+    private void OnEnable()
+    {
+        StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
+
+        StaticEventHandler.OnRoomEnemiesDefeated += StaticEventHandler_OnRoomEnemiesDefeated;
+    }
+
+    private void OnDisable()
+    {
+        StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;
+
+        StaticEventHandler.OnRoomEnemiesDefeated -= StaticEventHandler_OnRoomEnemiesDefeated;
+    }
+
+    private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
+    {
+        SetCurrentRoom(roomChangedEventArgs.room);
+    }
+
+    private void StaticEventHandler_OnRoomEnemiesDefeated(RoomEnemiesDefeatedArgs roomEnemiesDefeatedArgs)
+    {
+        RoomEnemiesDefeated();
+    }
+
     private void Start()
     {
+        previousGamestate = Gamestate.gameStarted;
         gameState = Gamestate.gameStarted;
     }
 
@@ -77,6 +105,31 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
                 gameState = Gamestate.playingLevel;
                 break;
+
+            case Gamestate.gameWon:
+
+                if (previousGamestate != Gamestate.gameWon)
+                    StartCoroutine(GameWon());
+
+                break;
+
+            //Handle game being lost
+            case Gamestate.gameLost:
+
+                if(previousGamestate != Gamestate.gameLost)
+                {
+                    StopAllCoroutines(); //Prevent messages if you clear the level as you get killed
+                    StartCoroutine(GameLost());
+                }
+                
+                break;
+
+            //Restart the game
+            case Gamestate.restartGame:
+
+                RestartGame();
+
+                break;
         }
     }
 
@@ -84,12 +137,62 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         return player;
     }
+
+    public Sprite GetPlayerMinimapIcon()
+    {
+        return playerDetails.playerMinimapIcon;
+    }
+
     public void SetCurrentRoom(Room room)
     {
         previousRoom = currentRoom;
         currentRoom = room;
     }
 
+    private void RoomEnemiesDefeated()
+    {
+        //Initialise dungeon as being cleared
+        bool isDungeonClearofRegularEnemies = true;
+        bossRoom = null;
+
+        //Loop through all dungeon room if cleared of enemies
+        foreach (KeyValuePair<string, Room> keyValuePair in DungeonBuilder.Instance.dungeonBuilderRoomDictionary)
+        {
+            //Skip boss room for time being
+            if (keyValuePair.Value.roomNodeType.isBossRoom)
+            {
+                bossRoom = keyValuePair.Value.instantiatedRoom;
+                continue;
+            }
+
+            //check if other room is cleared of enemies
+            if(!keyValuePair.Value.isClearedOfEnemies)
+            {
+                isDungeonClearofRegularEnemies = false;
+                break;
+            }
+        }
+
+        //Set game state
+        if ((isDungeonClearofRegularEnemies && bossRoom == null) || (isDungeonClearofRegularEnemies && bossRoom.room.isClearedOfEnemies))
+        {
+            // Are there any dungeon levels then
+            if (currentDungeonLevelListIndex < dungeonLevelList.Count -1)
+            {
+                gameState = Gamestate.levelCompleted;
+            }
+            else
+            {
+                gameState = Gamestate.gameWon;
+            }
+        }
+        else if (isDungeonClearofRegularEnemies)
+        {
+            gameState = Gamestate.bossStage;
+            StartCoroutine(BossStage());
+        }
+
+    }
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
@@ -101,6 +204,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
             Debug.Log("cannot build dungeon from specified rooms and node graph");
         }
 
+        //call static event that room has changed
+        StaticEventHandler.CallRoomChangedEvent(currentRoom);
+
         //set player position roughly mid room
         player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, (currentRoom.lowerBounds.y
             + currentRoom.upperBounds.y) / 2f, 0f);
@@ -109,9 +215,63 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
     }
 
+    /// <summary>
+    /// Enterr Boss Area
+    /// </summary>
+    private IEnumerator BossStage()
+    {
+        //activate boss room
+        bossRoom.gameObject.SetActive(true);
+
+        //UNlock boss room
+        bossRoom.UnlockDoors(0f);
+
+        //Wait for 2 Secondss
+        yield return new WaitForSeconds(2f);
+
+        Debug.Log("Boss Stage - Find and destroy the boss");
+    }
+
+    private IEnumerator GameWon()
+    {
+        previousGamestate = Gamestate.gameWon;
+
+        Debug.Log("Game Won");
+
+        //wayt for 10 seconds
+        yield return new WaitForSeconds(10f);
+
+        //Load Next Scene
+
+    }
+
+    private IEnumerator GameLost()
+    {
+        previousGamestate = Gamestate.gameLost;
+
+        Debug.Log("Game Lost");
+
+        yield return new WaitForSeconds(10f);
+
+        gameState = Gamestate.restartGame;
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene("Main Base");
+    }
+
     public Room GetCurrentRoom()
     {
         return currentRoom;
+    }
+
+    /// <summary>
+    /// Get the current dungeon level
+    /// </summary>
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
     #region Validation

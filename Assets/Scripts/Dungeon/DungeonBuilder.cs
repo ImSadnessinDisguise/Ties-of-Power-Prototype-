@@ -13,6 +13,18 @@ public class DungeonBuilder : SingletonMonoBehaviour<DungeonBuilder>
     private RoomNodeTypeListSO roomNodeTypeList;
     private bool dungeonBuildSuccesful;
 
+    private void OnEnable()
+    {
+        //set dimmed material to off
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 0f);
+    }
+
+    private void OnDisable()
+    {
+        //set dimmed material to fully visible
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -21,6 +33,7 @@ public class DungeonBuilder : SingletonMonoBehaviour<DungeonBuilder>
         LoadRoomNodeTypeList();
 
         //Set dimmed material to fully visible 
+
     }
 
     private void LoadRoomNodeTypeList()
@@ -445,6 +458,8 @@ public class DungeonBuilder : SingletonMonoBehaviour<DungeonBuilder>
         room.lowerBounds = roomTemplate.lowerBounds;
         room.upperBounds = roomTemplate.upperBounds;
         room.spawnPositionArray = roomTemplate.spawnPositionArray;
+        room.enemiesByLevelList = roomTemplate.enemiesByLevelList;
+        room.roomLevelEnemySpawnParametersList = roomTemplate.roomEnemySpawnParametersList;
         room.templateLowerBounds = roomTemplate.lowerBounds;
         room.templateUpperBounds = roomTemplate.upperBounds;
 
@@ -464,6 +479,13 @@ public class DungeonBuilder : SingletonMonoBehaviour<DungeonBuilder>
         {
             room.parentRoomID = roomNode.parentRoomNodeIDList[0];
         }
+
+        //if there is any enemies to spawn then default to be clear of enemies
+        if (room.GetNumberOfEnemiesToSpawn(GameManager.Instance.GetCurrentDungeonLevel()) == 0)
+        {
+            room.isClearedOfEnemies = true;
+        }
+
         return room;
 
 

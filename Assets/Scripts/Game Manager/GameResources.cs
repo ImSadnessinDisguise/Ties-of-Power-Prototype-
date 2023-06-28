@@ -45,6 +45,14 @@ public class GameResources : MonoBehaviour
     [Tooltip("Dimmed Material")]
     #endregion
     public Material dimmedMaterial;
+    #region Tooltip
+    [Tooltip("Sprite Lit Default Material")]
+    #endregion
+    public Material litMaterial;
+    #region Tooltip
+    [Tooltip("Populate with variable lit shader")]
+    #endregion
+    public Shader variableLitShader;
 
     #region Header SPECIAL TILEMAP TILES
     [Space(10)]

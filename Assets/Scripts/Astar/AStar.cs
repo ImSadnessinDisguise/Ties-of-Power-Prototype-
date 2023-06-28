@@ -13,13 +13,13 @@ public static class AStar
         //Adjust position by lower bounds 
         startGridPosition -= (Vector3Int)room.templateLowerBounds;
         endGridPosition -= (Vector3Int)room.templateLowerBounds;
-
+         
         //create open list and closed hashset
         List<Node> openNodeList = new List<Node>();
         HashSet<Node> closedNodeHashSet = new HashSet<Node>();
 
         //create gridnode for pathfinding
-        GridNodes gridNodes = new GridNodes(room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateLowerBounds.y -
+        GridNodes gridNodes = new GridNodes(room.templateUpperBounds.x - room.templateLowerBounds.x + 1, room.templateUpperBounds.y -
             room.templateLowerBounds.y + 1);
 
         Node startNode = gridNodes.GetGridNode(startGridPosition.x, startGridPosition.y);

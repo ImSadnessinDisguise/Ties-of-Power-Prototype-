@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d75e9f4cddb413459b39826d674289a, type: 3}
+  m_Name: LootTeemar
+  m_EditorClassIdentifier: 
+  lootSprite: {fileID: 1373006543, guid: ba198ae55fb2ae6409d4deac5bf82153, type: 3}
+  lootAnimator: {fileID: 9100000, guid: efddf930fc47fb04784c0d05a03b6e7a, type: 2}
+  lootName: Teemar
+  dropChance: 100

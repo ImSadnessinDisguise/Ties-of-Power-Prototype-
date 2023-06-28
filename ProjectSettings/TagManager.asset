@@ -10,6 +10,8 @@ TagManager:
   - collision
   - minimap
   - MiniMap Tilemap
+  - Enemies
+  - enemies
   layers:
   - Default
   - TransparentFX
@@ -47,17 +49,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 3043267261
-    locked: 0
   - name: Decorations 1
     uniqueID: 188605793
+    locked: 0
+  - name: Ground
+    uniqueID: 3043267261
     locked: 0
   - name: Decorations 2
     uniqueID: 879703667
     locked: 0
   - name: collision
     uniqueID: 156832121
+    locked: 0
+  - name: Instances
+    uniqueID: 2105760597
+    locked: 0
+  - name: Wall
+    uniqueID: 3067025381
     locked: 0
   - name: Minimap
     uniqueID: 1744586937

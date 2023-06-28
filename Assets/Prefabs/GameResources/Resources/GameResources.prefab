@@ -47,6 +47,9 @@ MonoBehaviour:
   roomNodeTypeList: {fileID: 11400000, guid: 42acf14b73aa618458d67467454606ba, type: 2}
   currentPlayer: {fileID: 11400000, guid: f9ba34fc40979f3499efe78832910e6c, type: 2}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
+  litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  variableLitShader: {fileID: -6465566751694194690, guid: 74a4e03513c12e2499fac65b4230a489,
+    type: 3}
   enemyUnwalkableCollsionTilesArray:
   - {fileID: 11400000, guid: c69bd49990a5b3744a5ff0fa2a7c2941, type: 2}
   preferredEnemyPathTile: {fileID: 11400000, guid: 88d598b028d84414cbe2f21db740d216,

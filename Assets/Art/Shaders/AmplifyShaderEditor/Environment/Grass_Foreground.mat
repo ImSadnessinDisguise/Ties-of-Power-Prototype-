@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Grass_Foreground
+  m_Shader: {fileID: 4800000, guid: d929c4f6cb555724fa8f323f93470cf7, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ETC1_EXTERNAL_ALPHA
+  - _ADDSHADOWOVERLAY_ON
+  - _ANIMATEVERTEX_ON
+  - _CLIPALPHA_ON
+  - _DEPTHFADE_ON
+  - _DISTANCE_FADE_ON_ON
+  - _DITHER_ON
+  - _OVERLAYDARKNESS1_ON
+  - _SHADOWON_ON
+  - _USEDISTANCETINT_ON
+  - _VERTEX_OFFSET_X_ON
+  - _VERTEX_OFFSET_Y_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: 774327fbfae19ee4b9e839cdcc90ded9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VertexMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WindTexture:
+        m_Texture: {fileID: 2800000, guid: 89e81d561409c524aa7758f387c8d887, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - PixelSnap: 0
+    - _AddShadowOverlay: 1
+    - _AlphaThreshold: 0
+    - _AmountToSubtract: -11.24
+    - _AnimateVertex: 1
+    - _BlackWhite: 0
+    - _BlendIntensity: 0.574
+    - _BlendIntensity1: 0.574
+    - _CameraOffset: 66
+    - _ClipAlpha: 1
+    - _ClipAlphaThreshold: 0.421
+    - _ClipBelowGround: 0
+    - _ClipThreshold: 0.85
+    - _CloudOverlayIntensity: 0
+    - _Cutoff: 0.351
+    - _DISTANCE_FADE_ON: 1
+    - _DarknessOffset: 1
+    - _DarknessOverlay: 1
+    - _DepthFade: 1
+    - _DepthSmoothness: 0.566
+    - _DepthThreshold: 0.765
+    - _DistanceEnd: 1
+    - _DistanceStart: 0
+    - _DitherActive: 1
+    - _FadeIntoFog: 0
+    - _FadeIntoWoods: 0
+    - _Falloff: 4.94
+    - _FillAlpha: 0
+    - _FirstAmount: 1
+    - _Float0: 32.2
+    - _GrassShadowLerpAmount: 1
+    - _IgnoreSpriteFacing: 0
+    - _InWoods: 0
+    - _IsFlag: 1
+    - _IsGrass: 0
+    - _LerpAmount: 0
+    - _MaxEmission: 1.5
+    - _MultiplyShadow: 32.2
+    - _NoiseScale: 4.06
+    - _Offset: 0
+    - _OverlayDarkness: 0
+    - _OverlayDarkness1: 1
+    - _Shad: 0
+    - _ShadowIntensity: 0.39
+    - _ShadowIntensity1: 32.2
+    - _ShadowLerpAmount: 0.165
+    - _ShadowOn: 1
+    - _ShadowOverlay: 0
+    - _SpritesDefault: 0
+    - _ToggleSwitch0: 0
+    - _TransitionFade: 15.44
+    - _USEEMISSION: 0
+    - _UseDistanceTint: 0
+    - _UseEmission: 0
+    - _Vertex_Flip_Mask: 0
+    - _Vertex_Offset_X: 1
+    - _Vertex_Offset_Y: 1
+    - _WindDensity: 0.51
+    - _WindMovement: 1.51
+    - _WindSpeed: -3
+    - _WindStrength: 0
+    - __dirty: 0
+    - _dummy: 0
+    - _gradientSpread: 1
+    - _xOffset: 1
+    - _yOffset: 0
+    - _zOffset: 0.15
+    m_Colors:
+    - _Color: {r: 0.07450981, g: 0, b: 0.12941177, a: 1}
+    - _Color1: {r: 0, g: 0, b: 0, a: 0.5450981}
+    - _EmissionColor: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionScale: {r: 1, g: 1, b: 0, a: 0}
+    - _FillColor: {r: 0, g: 0, b: 0, a: 0}
+    - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowColor1: {r: 0, g: 0, b: 0, a: 1}
+    - _ShadowOffset: {r: 0, g: -0.03, b: 0, a: 0}
+    - _ShadowOffset1: {r: 0, g: -0.03, b: 0, a: 0}
+    - _Vector0: {r: 1, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 0.5, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
