@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthDetails : MonoBehaviour
+[System.Serializable]
+public struct EnemyHealthDetails
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public DungeonLevelSO dungeonlevel;
+    public int enemyHealthAmount;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
+    
+

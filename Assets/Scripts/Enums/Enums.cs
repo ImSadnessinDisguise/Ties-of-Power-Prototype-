@@ -8,6 +8,27 @@ public enum Orientation
   none
 }
 
+public enum ChestSpawnEvent
+{
+    onRoomEntry,
+    OnEnemiesDefeated
+
+}
+
+public enum ChestSpawnPosition
+{
+    atSpawnerPosition,
+    atPlayerPosition
+}
+
+public enum ChestState
+{
+    closed,
+    healthItem,
+    temmarItem,
+    empty
+}
+
 public enum Gamestate
 {
     gameStarted,

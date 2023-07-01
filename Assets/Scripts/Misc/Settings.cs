@@ -15,12 +15,9 @@ public static class Settings
     #endregion 
 
     #region ROOM SETTINGS
-
     public const float fadeInTime = 0.05f; // time to fade in the room
     public const int maxChildCorridor = 3; //Highest number should be 3 as to not fail dungeon generation
     public const float doorUnlockDelay = 1f;
-
-
     #endregion
 
     #region ASTAR PATHFINDING PARAMETERS
@@ -38,6 +35,14 @@ public static class Settings
 
     //Animator Paramters - Doors
     public static int open = Animator.StringToHash("open");
+    #endregion
+
+    #region ENEMY PARAMETERS
+    public const int defaultEnemyHealth = 20;
+    #endregion
+
+    #region UI PARAMETERS
+    public const float uiHeartSpacing = 16f;
     #endregion
 
     #region GameObject Tag

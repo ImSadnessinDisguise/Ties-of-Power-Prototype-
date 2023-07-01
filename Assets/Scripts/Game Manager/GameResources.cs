@@ -53,6 +53,10 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with variable lit shader")]
     #endregion
     public Shader variableLitShader;
+    #region Tooltip
+    [Tooltip("Populate with the materialize shader")]
+    #endregion
+    public Shader materializeShader;
 
     #region Header SPECIAL TILEMAP TILES
     [Space(10)]
@@ -66,6 +70,32 @@ public class GameResources : MonoBehaviour
     [Tooltip("Prefered path for enemy navigation")]
     #endregion
     public TileBase preferredEnemyPathTile;
+
+    #region HEADER CHEST
+    [Space(10)]
+    [Header("Chest")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Chest Item Prefab")]
+    #endregion
+    public GameObject chestItemPrefab;
+    #region Tooltip
+    [Tooltip("Populate with Heart Icon Sprite")]
+    #endregion
+    public Sprite heartIcon;
+
+
+    #region HEADER UI PARAMETERS
+    [Space(10)]
+    [Header("UI")]
+    #endregion HEADER UI PARAMETERS
+    #region Tooltip
+    [Tooltip("Populate with heart image prefab")]
+    #endregion
+    public GameObject heartPrefab;
+
+
+
 
     #region Validation
 #if UNITY_EDITOR

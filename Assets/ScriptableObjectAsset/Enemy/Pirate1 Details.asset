@@ -16,3 +16,16 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3865679675562783027, guid: 09ac973dcfbb0d74a83b9feac8360b3b,
     type: 3}
   chaseDistance: 10
+  firingIntervalMin: 0.1
+  firingIntervalMax: 1
+  firingDurationMin: 1
+  firingDurationMax: 2
+  firingLineOfSightRequired: 0
+  enemyStandardMaterial: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40,
+    type: 2}
+  enemyHealthDetailsArray: []
+  isImmunneAfterHit: 0
+  hitImmunityTime: 0
+  enemyMaterializeTime: 1
+  enemyMaterializeShader: {fileID: 0}
+  enemyMaterializeColor: {r: 0, g: 0, b: 0, a: 0}

@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(mainPlayer))]
 public class Controller : MonoBehaviour
 {
     public Rigidbody2D body;
     public SpriteRenderer spRenderer;
-    private GameObject attackArea = default;
+    public areaAttack attackArea;
     private bool attacking = false;
     public Animator animator;
+    
     public LayerMask enemyLayers;
+    public GameObject areaHitbox;
+    private mainPlayer player;
+    private WaitForFixedUpdate waitForFixedUpdate;
 
     public float walkSpeed;
     public float framRate;
@@ -18,14 +23,24 @@ public class Controller : MonoBehaviour
 
     private void Awake()
     {
+
         animator = GetComponent<Animator>();
+        player = GetComponent<mainPlayer>();
 
     }
+
+    private void Start()
+    {
+        waitForFixedUpdate = new WaitForFixedUpdate();
+    }
+
     private void Update()
     {
         Move();
 
         SpriteFlip();
+
+        UseItemInput();
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -33,7 +48,6 @@ public class Controller : MonoBehaviour
 
         }
 
-        
 
         if (direction.x > 0 || direction.x < 0)
         {
@@ -67,7 +81,7 @@ public class Controller : MonoBehaviour
     private void Attack()
     {
         animator.SetTrigger("attack");
-        attackArea.SetActive(attacking);
+        //attackArea.SetActive(attacking);
 
     }
 
@@ -84,18 +98,33 @@ public class Controller : MonoBehaviour
         if (!spRenderer.flipX && direction.x < 0)
         {
             spRenderer.flipX = true;
+            attackArea.attackDirection = areaAttack.AttackDirection.left;
         }
         else if (spRenderer.flipX && direction.x > 0)
         {
             spRenderer.flipX = false;
+            attackArea.attackDirection = areaAttack.AttackDirection.right;
         }
     }
 
-    public void SetSprite()
-    {
-        if (direction.y > 0 )
-        {
 
+    private void UseItemInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float useItemRadius = 2f;
+
+            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(player.GetPlayerPosition(), useItemRadius);
+
+            foreach (Collider2D collider2D in collider2DArray)
+            {
+                IUseable iUseable = collider2D.GetComponent<IUseable>();
+
+                if (iUseable != null)
+                {
+                    iUseable.UseItem();
+                }
+            }
         }
     }
 

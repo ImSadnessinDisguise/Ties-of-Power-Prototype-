@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonoBehaviour<GameManager>
@@ -84,13 +85,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     // Update is called once per frame
     private void Update()
     {
-        HandleGameState(); 
+        HandleGameState();
 
-        //for testing
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            gameState = Gamestate.gameStarted;
-        }
     }
 
     private void HandleGameState()
@@ -104,6 +100,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
                 PlayDungeonLevel(currentDungeonLevelListIndex);
 
                 gameState = Gamestate.playingLevel;
+
+                RoomEnemiesDefeated();
+                break;
+
+            case Gamestate.levelCompleted:
+                StartCoroutine(LevelCompleted());
                 break;
 
             case Gamestate.gameWon:
@@ -227,9 +229,31 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         bossRoom.UnlockDoors(0f);
 
         //Wait for 2 Secondss
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);    
 
         Debug.Log("Boss Stage - Find and destroy the boss");
+    }
+
+    private IEnumerator LevelCompleted()
+    {
+        //Play next Level
+        gameState = Gamestate.playingLevel;
+
+        yield return new WaitForSeconds(2f);
+
+        Debug.Log("Level Completed - press return to progress to the next level");
+
+        while (!Input.GetKeyDown(KeyCode.Return))
+        {
+            yield return null;
+        }
+
+        yield return null;
+
+        currentDungeonLevelListIndex++;
+
+
+        PlayDungeonLevel(currentDungeonLevelListIndex);
     }
 
     private IEnumerator GameWon()

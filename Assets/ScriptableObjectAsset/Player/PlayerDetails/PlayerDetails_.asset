@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerDetails_
   m_EditorClassIdentifier: 
   playerCharacterName: Haut
-  playerPrefab: {fileID: 8204782286568556947, guid: b0f78c15ce3409a4aabe447de6e3dccc,
+  playerPrefab: {fileID: 3588361971508019995, guid: b0f78c15ce3409a4aabe447de6e3dccc,
     type: 3}
-  runtimeAnimatorController: {fileID: 9100000, guid: e851cc45823764c46afca08dceb65894,
+  runtimeAnimatorController: {fileID: 9100000, guid: 669e0fff116edbe48adaea73583fe82d,
     type: 2}
-  playerHealthAmount: 20
+  playerHealthAmount: 100
   playerMinimapIcon: {fileID: 21300000, guid: 2f476409d06adb14790b189721d2aa26, type: 3}

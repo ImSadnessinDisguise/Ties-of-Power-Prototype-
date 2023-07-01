@@ -6,8 +6,6 @@ public class newHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth = 3;
     private float currentHealth;
-    private LootBag lootBag;
-
 
     public void Awake()
     {
@@ -37,7 +35,7 @@ public class newHealth : MonoBehaviour
     private void EnemyDestroyed()
     {
         DestroyedEvent destroyedEvent = GetComponent<DestroyedEvent>();
-        destroyedEvent.CallDestroyedEvent();
+        destroyedEvent.CallDestroyedEvent(false);
     }
 
 

@@ -77,7 +77,7 @@ public class EnemySpawner : SingletonMonoBehaviour<EnemySpawner>
         }    
 
         //set gamestate engaging enemies 
-        if (GameManager.Instance.gameState == Gamestate.playingLevel)
+        else if (GameManager.Instance.gameState == Gamestate.playingLevel)
         {
             GameManager.Instance.previousGamestate = Gamestate.playingLevel;
             GameManager.Instance.gameState = Gamestate.engagingEnemies;
@@ -153,7 +153,7 @@ public class EnemySpawner : SingletonMonoBehaviour<EnemySpawner>
         enemy.GetComponent<DestroyedEvent>().OnDestroyed += Enemy_OnDestroyed;
     }
 
-    private void Enemy_OnDestroyed(DestroyedEvent destroyedEvent)
+    private void Enemy_OnDestroyed(DestroyedEvent destroyedEvent, DestroyedEventArgs destroyedEventArgs)
     {
         //Unsubscribe
         destroyedEvent.OnDestroyed -= Enemy_OnDestroyed;

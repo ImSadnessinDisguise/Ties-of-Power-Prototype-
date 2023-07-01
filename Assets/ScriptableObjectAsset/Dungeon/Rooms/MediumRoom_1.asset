@@ -24,9 +24,9 @@ MonoBehaviour:
     orientation: 2
     doorPrefab: {fileID: 1781526231782849259, guid: e41879c6e474cda44a89f9f4faa8dcca,
       type: 3}
-    doorwayStartCopyPosition: {x: -27, y: 12}
-    doorwayCopyTileWidth: 7
-    doorwayCopyTileHeight: 3
+    doorwayStartCopyPosition: {x: -27, y: -4}
+    doorwayCopyTileWidth: 4
+    doorwayCopyTileHeight: 7
     isConnected: 0
     isUnavailable: 0
   - position: {x: 7, y: 2}
@@ -56,6 +56,8 @@ MonoBehaviour:
   - dungeonLevel: {fileID: 11400000, guid: 6da5ad2a1a66831478930d24958f139d, type: 2}
     spawnableObjectRatioList:
     - dungeonObject: {fileID: 11400000, guid: cbfbc50dfca814d4ba3caefb2a5f548e, type: 2}
+      ratio: 1
+    - dungeonObject: {fileID: 11400000, guid: c021e8be126457042802f0b6bb3a592d, type: 2}
       ratio: 1
   roomEnemySpawnParametersList:
   - dungeonLevel: {fileID: 11400000, guid: 6da5ad2a1a66831478930d24958f139d, type: 2}

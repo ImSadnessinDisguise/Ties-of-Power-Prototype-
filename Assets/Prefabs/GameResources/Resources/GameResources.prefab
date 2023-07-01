@@ -50,7 +50,14 @@ MonoBehaviour:
   litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   variableLitShader: {fileID: -6465566751694194690, guid: 74a4e03513c12e2499fac65b4230a489,
     type: 3}
+  materializeShader: {fileID: -6465566751694194690, guid: 5fec8f8e6ea244648a3c6ede24a56288,
+    type: 3}
   enemyUnwalkableCollsionTilesArray:
   - {fileID: 11400000, guid: c69bd49990a5b3744a5ff0fa2a7c2941, type: 2}
   preferredEnemyPathTile: {fileID: 11400000, guid: 88d598b028d84414cbe2f21db740d216,
     type: 2}
+  chestItemPrefab: {fileID: 265395015945799016, guid: 1116f7177440a3c4582b9119d9588210,
+    type: 3}
+  heartIcon: {fileID: 808596103, guid: 43475809c047a52408a9562b1f163331, type: 3}
+  heartPrefab: {fileID: 674562269859687141, guid: e313e88e5d53588419a0fe7b0ece824d,
+    type: 3}

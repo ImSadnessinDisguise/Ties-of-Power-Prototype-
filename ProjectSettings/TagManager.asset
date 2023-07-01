@@ -25,7 +25,7 @@ TagManager:
   - Player
   - Camera 1
   - Camera 2
-  - 
+  - Environment
   - 
   - 
   - 
@@ -69,4 +69,16 @@ TagManager:
     locked: 0
   - name: Minimap
     uniqueID: 1744586937
+    locked: 0
+  - name: UI
+    uniqueID: 152374825
+    locked: 0
+  - name: Background
+    uniqueID: 1040114691
+    locked: 0
+  - name: MidGround
+    uniqueID: 3461557741
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3988580581
     locked: 0

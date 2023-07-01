@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+[RequireComponent(typeof(MaterializeEffect))]
 [DisallowMultipleComponent]
 public class Enemy : MonoBehaviour
 {
-    [HideInInspector]public EnemyDetailsSO enemyDetails;
+    [HideInInspector] public EnemyDetailsSO enemyDetails;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public SpriteRenderer[] spriteRendererArray;
+    [HideInInspector] public BoxCollider2D boxCollider2D;
     [HideInInspector] public Animator animator;
     [HideInInspector] public MovementToPositionEvent movementToPositionEvent;
     [HideInInspector] public IdleEvent idleEvent;
 
     public GameObject EnemyPrefab;
     private LootBag lootBag;
+    private MaterializeEffect materializeEffect;
     private EnemyMovementAI enemyMovementAI;
 
     private void Awake()
     {
         //Load Component
-        spriteRendererArray = GetComponentsInChildren<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        materializeEffect = GetComponent<MaterializeEffect>();
         animator = GetComponent<Animator>();
         enemyMovementAI = GetComponent<EnemyMovementAI>();
         movementToPositionEvent = GetComponent<MovementToPositionEvent>();
@@ -33,6 +39,7 @@ public class Enemy : MonoBehaviour
         this.enemyDetails = enemyDetails;
 
         SetEnemyMovementUpdateFrame(enemySpawnNumber);
+
     }
 
     //Set enemy movement update frame
@@ -44,9 +51,23 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (EnemyPrefab.gameObject == null)
-        {
-            lootBag.InstantiateLoot(transform.position);
-        }
+        lootBag.InstantiateLoot(transform.position);
+    }
+
+    private IEnumerator MaterializeEnemy()
+    {
+        EnemyEnable(false);
+
+        yield return StartCoroutine(materializeEffect.MaterializeRoutine(enemyDetails.enemyMaterializeShader, enemyDetails.enemyMaterializeColor,
+            enemyDetails.enemyMaterializeTime, spriteRendererArray, enemyDetails.enemyStandardMaterial));
+
+        EnemyEnable(true);
+    }
+
+    private void EnemyEnable(bool isEnabled)
+    {
+        boxCollider2D.enabled = isEnabled;
+
+        enemyMovementAI.enabled = isEnabled;
     }
 }

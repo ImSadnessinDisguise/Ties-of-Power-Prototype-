@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Haut combo keris_0
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 789
+        width: 109
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2a3138895e16544a9f6a8f1413deaa
+      internalID: -479379841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_1
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 789
+        width: 102
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0da6ae17b98e144d8d23fb3515f72fc
+      internalID: -1943071168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_2
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 789
+        width: 186
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cd35e5d008bb94aa5d8b2a3d2b08a0
+      internalID: 1552932435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_3
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 789
+        width: 172
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ef2d8ab1fa43848af9c930da90ad2f
+      internalID: -1211778310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_5
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 789
+        width: 168
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ff58ddbeee4234fa4f3d8dcc9fe677
+      internalID: 131046991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_8
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 789
+        width: 126
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef6599bb5a40f144ba1d0d50243e82c
+      internalID: 77939438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_9
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 788
+        width: 174
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d68738daaab5ef4abd0d5e6b123636c
+      internalID: -1042251908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_11
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 789
+        width: 172
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae665320d87bcf4ba9982ade3a59965
+      internalID: 1406663689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_13
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 398
+        width: 254
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c0a4a34fdb73246889bbb1ba61e9ea
+      internalID: 1566776687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_14
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 401
+        width: 297
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fa3e7a04ddf8b4ebfdbfcefc3fdf66
+      internalID: 1745001968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_15
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 400
+        width: 325
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3090bccd93b004fbdebff7015f94f8
+      internalID: -1549504891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_16
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 398
+        width: 230
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220f1d0218c4b69479885a86a29e6f19
+      internalID: -506970142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_18
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 398
+        width: 131
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f2370ee5187a0a4ab42dd2ae58640f6
+      internalID: 584099080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_19
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 398
+        width: 127
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abe18c4c544bb4448ba7735c0052eb38
+      internalID: -551461673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Haut combo keris_23
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 24
+        width: 336
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b352feacb10bd944a76a551eb417f54
+      internalID: -1059024946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -113,7 +428,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Haut combo keris_3: -1211778310
+      Haut combo keris_17: -769163514
+      Haut combo keris_19: -551461673
+      Haut combo keris_12: -1454790306
+      Haut combo keris_5: 131046991
+      Haut combo keris_7: 1372750929
+      Haut combo keris_10: 1559768255
+      Haut combo keris_16: -506970142
+      Haut combo keris_9: -1042251908
+      Haut combo keris_18: 584099080
+      Haut combo keris_22: 1698623946
+      Haut combo keris_23: -1059024946
+      Haut combo keris_21: 239881535
+      Haut combo keris_2: 1552932435
+      Haut combo keris_25: 1443285840
+      Haut combo keris_14: 1745001968
+      Haut combo keris_6: 1534342732
+      Haut combo keris_8: 77939438
+      Haut combo keris_15: -1549504891
+      Haut combo keris_13: 1566776687
+      Haut combo keris_1: -1943071168
+      Haut combo keris_0: -479379841
+      Haut combo keris_4: -512827195
+      Haut combo keris_11: 1406663689
+      Haut combo keris_20: 1844604967
+      Haut combo keris_24: 1249330360
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,50 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-
+[RequireComponent(typeof(HealthEvent))]
+[DisallowMultipleComponent]
 public class Health : MonoBehaviour
 {
-    private int startingHealth;
-    private int currentHeath;
-    public int health;
-    public int numOfHearts;
+    public int startingHealth;
+    public int currentHealth;
+    private HealthEvent healthEvent;
+    private Player player;
 
-    public Image  heartImage;
-    public Sprite fullHeart, halfHeart, emptyHeart;
-
-    public enum HeartStatus
-    {
-        Empty = 0,
-        Half = 1,
-        Full = 2
-    }
-
+    [HideInInspector] public bool isDamageable = true;
     private void Awake()
     {
-        heartImage = GetComponent<Image>();
+        //Load Component
+        healthEvent = GetComponent<HealthEvent>();
     }
 
-    
-    public void SetHeartImage(HeartStatus status)
+    private void Start()
     {
-        switch (status)
+        //Trigger a healthEvent UI Update
+        CallHealthEvent(0);
+
+        //Attempt to load player
+        player = GetComponent<Player>();
+    }
+
+    public void TakeDamage (int damageAmount)
+    {
+        if (isDamageable)
         {
-            case HeartStatus.Empty:
-                heartImage.sprite = emptyHeart;
-                break;
-
-            case HeartStatus.Half:
-                heartImage.sprite = halfHeart;
-                break;
-
-            case HeartStatus.Full:
-                heartImage.sprite = fullHeart;
-                break;
+            currentHealth -= damageAmount;
+            CallHealthEvent(damageAmount);
         }
     }
 
+    private void CallHealthEvent(int damageAmount)
+    {
+        //trigger health event
+        healthEvent.CallHealthChangedEvent(((float)currentHealth / (float)startingHealth), currentHealth, damageAmount);
+    }
 
     ///<summary>
     ///Set Starting Health
@@ -52,7 +47,7 @@ public class Health : MonoBehaviour
     public void SetStartingHealth(int startingHealth)
     {
         this.startingHealth = startingHealth;
-        currentHeath = startingHealth;
+        currentHealth = startingHealth;
     }
 
     ///<summary>
@@ -63,7 +58,21 @@ public class Health : MonoBehaviour
         return startingHealth;
     }
 
+    public void AddHealth(int healthPercent)
+    {
+        int healthIncrease = Mathf.RoundToInt((startingHealth * healthPercent) / 100f);
 
+        int totalHealth = currentHealth + healthIncrease;
 
-
+        if (totalHealth > startingHealth)
+        {
+            currentHealth = startingHealth;
+        }
+        else
+        {
+            currentHealth = totalHealth;
+        }
+        CallHealthEvent(0);
+    }
 }
+
