@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Audio;
 
 public class GameResources : MonoBehaviour
 {
@@ -36,6 +37,36 @@ public class GameResources : MonoBehaviour
     [Tooltip("used to reference player in between scenes")]
     #endregion
     public CurrentPlayerSO currentPlayer;
+
+    #region Header SOUNDS
+    [Space(10)]
+    [Header("Sounds")]
+    #endregion Header
+    #region Tooltip
+    [Tooltip("Populate with sounds master mixer group")]
+    #endregion
+    public AudioMixerGroup soundsMasterMixerGroup;
+
+    #region Header MUSIC
+    [Space(10)]
+    [Header("MUSIC")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Populate with the music master mixer group")]
+    #endregion
+    public AudioMixerGroup musicMasterMixerGroup;
+    #region Tooltip
+    [Tooltip("Music on full snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicOnFullSnapShot;
+    #region Tooltip
+    [Tooltip("Music low snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicLowSnapShot;
+    #region Tooltip
+    [Tooltip("Music off snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicOffSnapShot;
 
     #region Header Materials
     [Space(10)]
@@ -84,7 +115,6 @@ public class GameResources : MonoBehaviour
     #endregion
     public Sprite heartIcon;
 
-
     #region HEADER UI PARAMETERS
     [Space(10)]
     [Header("UI")]
@@ -103,6 +133,10 @@ public class GameResources : MonoBehaviour
     private void OnValidate()
     {
         HelperUtilities.ValidateCheckNullValue(this, nameof(preferredEnemyPathTile), preferredEnemyPathTile);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicMasterMixerGroup), musicMasterMixerGroup);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicOnFullSnapShot), musicOnFullSnapShot);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicLowSnapShot), musicLowSnapShot);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicOffSnapShot), musicOffSnapShot);
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(enemyUnwalkableCollsionTilesArray), enemyUnwalkableCollsionTilesArray); 
     }
 #endif

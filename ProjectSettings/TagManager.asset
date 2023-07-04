@@ -12,6 +12,7 @@ TagManager:
   - MiniMap Tilemap
   - Enemies
   - enemies
+  - shopSystemUI
   layers:
   - Default
   - TransparentFX

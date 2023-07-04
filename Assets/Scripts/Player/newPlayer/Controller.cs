@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(mainPlayer))]
-public class Controller : MonoBehaviour
+public class Controller : MonoBehaviour,IShopCustomer
 {
     public Rigidbody2D body;
     public SpriteRenderer spRenderer;
     public areaAttack attackArea;
     private bool attacking = false;
     public Animator animator;
+    public IShopCustomer shopCustomer;
     
     public LayerMask enemyLayers;
     public GameObject areaHitbox;
@@ -19,11 +20,21 @@ public class Controller : MonoBehaviour
     public float walkSpeed;
     public float framRate;
 
+    private float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = .5f, dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
+    [HideInInspector] public bool isRolling = false;
+    //[HideInInspector] public AudioSourcesIngame audioSource;
+
     Vector2 direction;
 
     private void Awake()
     {
-
+        //audioSource = GetComponent<AudioSourcesIngame>();
         animator = GetComponent<Animator>();
         player = GetComponent<mainPlayer>();
 
@@ -39,6 +50,8 @@ public class Controller : MonoBehaviour
         Move();
 
         SpriteFlip();
+
+        Dash();
 
         UseItemInput();
 
@@ -82,7 +95,7 @@ public class Controller : MonoBehaviour
     {
         animator.SetTrigger("attack");
         //attackArea.SetActive(attacking);
-
+        //PlayerSlashSoundEffect();
     }
 
     public void Move()
@@ -107,7 +120,6 @@ public class Controller : MonoBehaviour
         }
     }
 
-
     private void UseItemInput()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -128,4 +140,44 @@ public class Controller : MonoBehaviour
         }
     }
 
+    /*private void PlayerSlashSoundEffect()
+    {
+        SoundEffectManager.Instance.PlaySoundEffect(audioSource.slashSoundEffect);
+    }*/
+
+    private void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (dashCoolCounter <= 0)
+            {
+                activeMoveSpeed = dashSpeed;
+                dashCounter = dashLength;
+                animator.SetTrigger("Roll");
+
+                isRolling = true;
+            }
+        }
+
+        if (dashCounter > 0)
+        {
+            dashCounter -= Time.deltaTime;
+
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = walkSpeed;
+                dashCoolCounter = dashCooldown;
+            }
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+    }
+
+    public void BoughtItem(Item.ItemType itemType)
+    {
+        Debug.Log("Bought Item" + itemType);
+    }
 }

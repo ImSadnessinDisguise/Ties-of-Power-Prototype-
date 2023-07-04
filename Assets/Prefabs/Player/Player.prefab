@@ -131,7 +131,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5546875, y: 1.8046875}
+    oldSize: {x: 0.71, y: 2.31}
     newSize: {x: 1.109375, y: 3.609375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -234,6 +234,9 @@ MonoBehaviour:
   areaHitbox: {fileID: 6279718529752431753}
   walkSpeed: 8
   framRate: 0
+  dashSpeed: 8
+  dashLength: 2
+  dashCooldown: 0.5
 --- !u!114 &8725911955752201265
 MonoBehaviour:
   m_ObjectHideFlags: 0

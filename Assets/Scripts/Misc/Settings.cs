@@ -45,7 +45,12 @@ public static class Settings
     public const float uiHeartSpacing = 16f;
     #endregion
 
-    #region GameObject Tag
+    #region GAMEOBJECT TAG
     public const string playerTag = "Player";
+    #endregion
+
+    #region AUDIO
+    public const float musicFadeOutTime = 0.5f;
+    public const float musicFadeInTime = 0.5f;
     #endregion
 }

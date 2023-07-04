@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 52de2a412109faf4095e92c777d7c159
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Weapon1: {fileID: -1337407793, guid: b19901755cf26454a81df10513b67055, type: 3}
+  - Weapon2: {fileID: -1117360331, guid: b19901755cf26454a81df10513b67055, type: 3}
+  - weapon3: {fileID: -1187491803, guid: b19901755cf26454a81df10513b67055, type: 3}
+  - Potion: {fileID: 808596103, guid: 43475809c047a52408a9562b1f163331, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

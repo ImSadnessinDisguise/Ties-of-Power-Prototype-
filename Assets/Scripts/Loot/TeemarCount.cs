@@ -8,22 +8,22 @@ public class TeemarCount : MonoBehaviour
     public static TeemarCount instance;
 
     public TMP_Text teemarText;
-    public int currentTeemar = 0;
+    public int currentTeemar = 100;
 
     private void Awake()
     {
         instance = this;
     }
 
-    private void Start()
+    private void Update()
     {
-        teemarText.text = "Teemar: " + currentTeemar.ToString();
+        teemarText.text = "X: " + currentTeemar.ToString();
     }
 
     public void IncreaseTeemar(int v)
     {
         currentTeemar += v;
-        teemarText.text = "Teemar: " + currentTeemar.ToString();
+        teemarText.text = "X:" + currentTeemar.ToString();
     }
 
 }

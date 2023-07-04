@@ -8,25 +8,30 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass_Foreground
-  m_Shader: {fileID: 4800000, guid: d929c4f6cb555724fa8f323f93470cf7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 04217d4eb7dc76f4f8d51d315434cf0f, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - ETC1_EXTERNAL_ALPHA
   - _ADDSHADOWOVERLAY_ON
   - _ANIMATEVERTEX_ON
   - _CLIPALPHA_ON
+  - _CLIPBELOWGROUND
   - _DEPTHFADE_ON
   - _DISTANCE_FADE_ON_ON
   - _DITHER_ON
+  - _FADEINTOFOG_ON
+  - _FADEINTOWOODS_ON
+  - _IGNORESPRITEFACING
   - _OVERLAYDARKNESS1_ON
   - _SHADOWON_ON
   - _USEDISTANCETINT_ON
+  - _VERTEX_FLIP_MASK_ON
   - _VERTEX_OFFSET_X_ON
   - _VERTEX_OFFSET_Y_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -36,11 +41,39 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 2800000, guid: 774327fbfae19ee4b9e839cdcc90ded9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -66,10 +99,12 @@ Material:
     - _BlackWhite: 0
     - _BlendIntensity: 0.574
     - _BlendIntensity1: 0.574
+    - _BumpScale: 1
+    - _CameraFadeDistance: 2.9
     - _CameraOffset: 66
     - _ClipAlpha: 1
     - _ClipAlphaThreshold: 0.421
-    - _ClipBelowGround: 0
+    - _ClipBelowGround: 1
     - _ClipThreshold: 0.85
     - _CloudOverlayIntensity: 0
     - _Cutoff: 0.351
@@ -79,46 +114,60 @@ Material:
     - _DepthFade: 1
     - _DepthSmoothness: 0.566
     - _DepthThreshold: 0.765
+    - _DetailNormalMapScale: 1
     - _DistanceEnd: 1
     - _DistanceStart: 0
     - _DitherActive: 1
-    - _FadeIntoFog: 0
-    - _FadeIntoWoods: 0
+    - _DstBlend: 0
+    - _FadeIntoFog: 1
+    - _FadeIntoWoods: 1
     - _Falloff: 4.94
-    - _FillAlpha: 0
+    - _FillAlpha: 0.04
     - _FirstAmount: 1
     - _Float0: 32.2
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _GrassShadowLerpAmount: 1
-    - _IgnoreSpriteFacing: 0
+    - _IgnoreSpriteFacing: 1
     - _InWoods: 0
     - _IsFlag: 1
     - _IsGrass: 0
     - _LerpAmount: 0
     - _MaxEmission: 1.5
+    - _Mode: 0
     - _MultiplyShadow: 32.2
     - _NoiseScale: 4.06
+    - _OcclusionStrength: 1
     - _Offset: 0
     - _OverlayDarkness: 0
     - _OverlayDarkness1: 1
+    - _Parallax: 0.02
+    - _RadialDistanceOffset: 0.5
     - _Shad: 0
     - _ShadowIntensity: 0.39
     - _ShadowIntensity1: 32.2
     - _ShadowLerpAmount: 0.165
     - _ShadowOn: 1
     - _ShadowOverlay: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
     - _SpritesDefault: 0
+    - _SrcBlend: 1
     - _ToggleSwitch0: 0
     - _TransitionFade: 15.44
     - _USEEMISSION: 0
+    - _UVSec: 0
     - _UseDistanceTint: 0
     - _UseEmission: 0
-    - _Vertex_Flip_Mask: 0
+    - _Vertex_Flip_Mask: 1
     - _Vertex_Offset_X: 1
     - _Vertex_Offset_Y: 1
     - _WindDensity: 0.51
     - _WindMovement: 1.51
     - _WindSpeed: -3
     - _WindStrength: 0
+    - _ZWrite: 1
     - __dirty: 0
     - _dummy: 0
     - _gradientSpread: 1
@@ -136,6 +185,7 @@ Material:
     - _ShadowColor1: {r: 0, g: 0, b: 0, a: 1}
     - _ShadowOffset: {r: 0, g: -0.03, b: 0, a: 0}
     - _ShadowOffset1: {r: 0, g: -0.03, b: 0, a: 0}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Vector0: {r: 1, g: 0, b: 0, a: 0}
     - _WindDirection: {r: 0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

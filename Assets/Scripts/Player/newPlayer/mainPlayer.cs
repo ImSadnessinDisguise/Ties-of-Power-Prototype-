@@ -16,6 +16,7 @@ public class mainPlayer : MonoBehaviour
     [HideInInspector] public DestroyedEvent destroyedEvent;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
+    [HideInInspector] public Controller playerControl;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class mainPlayer : MonoBehaviour
         destroyedEvent = GetComponent<DestroyedEvent>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        playerControl = GetComponent<Controller>();
     }
 
     public void Initialize(PlayerDetailsSO playerDetails)

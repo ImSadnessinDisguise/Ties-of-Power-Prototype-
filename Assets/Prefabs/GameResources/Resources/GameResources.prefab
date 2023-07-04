@@ -46,6 +46,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNodeTypeList: {fileID: 11400000, guid: 42acf14b73aa618458d67467454606ba, type: 2}
   currentPlayer: {fileID: 11400000, guid: f9ba34fc40979f3499efe78832910e6c, type: 2}
+  soundsMasterMixerGroup: {fileID: -4734643798044506327, guid: 2ac509b551addfb48950fbdc0d9cefb4,
+    type: 2}
+  musicMasterMixerGroup: {fileID: -7206380732494497733, guid: 2ac509b551addfb48950fbdc0d9cefb4,
+    type: 2}
+  musicOnFullSnapShot: {fileID: 24500006, guid: 2ac509b551addfb48950fbdc0d9cefb4,
+    type: 2}
+  musicLowSnapShot: {fileID: 8893122114324796974, guid: 2ac509b551addfb48950fbdc0d9cefb4,
+    type: 2}
+  musicOffSnapShot: {fileID: -3084740370723268673, guid: 2ac509b551addfb48950fbdc0d9cefb4,
+    type: 2}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
   litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   variableLitShader: {fileID: -6465566751694194690, guid: 74a4e03513c12e2499fac65b4230a489,

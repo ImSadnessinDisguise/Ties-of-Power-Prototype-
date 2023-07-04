@@ -5,12 +5,12 @@ using UnityEngine;
 public class MeleeEnemy : MonoBehaviour
 {
     private Animator animator;
-    public GameObject enemy;
+    public Transform enemyTransform;
 
     private void Awake()
     {
         animator = GetComponentInParent<Animator>();
-        enemy = GetComponentInParent<GameObject>();
+        enemyTransform = GameManager.Instance.GetComponentInParent<Transform>();
     }
 
     private void Update()
@@ -20,7 +20,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void CheckDirection()
     {
-        if (enemy.transform.position.x < 0)
+        if (enemyTransform.position.x < 0)
         {
             transform.localPosition = new Vector3(transform.localPosition.x * -1, transform.position.y);
         }
