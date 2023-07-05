@@ -23,7 +23,7 @@ public class newHealth : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            //hurt
+            Instantiate(GameResources.Instance.bloodSplat, transform.position, Quaternion.Euler(-45 , 0, 0));
         }
         else
         {

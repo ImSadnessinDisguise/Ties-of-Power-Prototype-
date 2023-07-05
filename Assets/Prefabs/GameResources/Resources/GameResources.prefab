@@ -71,3 +71,5 @@ MonoBehaviour:
   heartIcon: {fileID: 808596103, guid: 43475809c047a52408a9562b1f163331, type: 3}
   heartPrefab: {fileID: 674562269859687141, guid: e313e88e5d53588419a0fe7b0ece824d,
     type: 3}
+  bloodSplat: {fileID: 8570340514560008694, guid: 8d65340c33a8f5942ab51870fc7d2d44,
+    type: 3}

@@ -124,6 +124,14 @@ public class GameResources : MonoBehaviour
     #endregion
     public GameObject heartPrefab;
 
+    #region Header PARTICLE EFFECTS
+    [Space(10)]
+    [Header("PARTICLE EFFECTS")]
+    #endregion
+    public GameObject bloodSplat;
+    
+
+
 
 
 
