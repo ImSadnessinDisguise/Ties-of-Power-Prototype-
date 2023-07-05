@@ -24,7 +24,7 @@ MonoBehaviour:
   doorwayList:
   - position: {x: -27, y: -8}
     orientation: 2
-    doorPrefab: {fileID: 5578879441319861494, guid: dbaf977f867362c4fb3f8877012d4b97,
+    doorPrefab: {fileID: 1781526231782849259, guid: e41879c6e474cda44a89f9f4faa8dcca,
       type: 3}
     doorwayStartCopyPosition: {x: -27, y: -4}
     doorwayCopyTileWidth: 4
@@ -63,9 +63,9 @@ MonoBehaviour:
       ratio: 1
   roomEnemySpawnParametersList:
   - dungeonLevel: {fileID: 11400000, guid: 6da5ad2a1a66831478930d24958f139d, type: 2}
-    minTotalEnemiesToSpawn: 3
-    maxTotalEnemiesToSpawn: 3
-    minConcurrentEnemies: 3
-    maxConcurrentEnemies: 3
+    minTotalEnemiesToSpawn: 8
+    maxTotalEnemiesToSpawn: 8
+    minConcurrentEnemies: 5
+    maxConcurrentEnemies: 6
     minSpawnInterval: 1
     maxSpawnInterval: 2

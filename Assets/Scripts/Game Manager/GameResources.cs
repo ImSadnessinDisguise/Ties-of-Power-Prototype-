@@ -68,6 +68,15 @@ public class GameResources : MonoBehaviour
     #endregion
     public AudioMixerSnapshot musicOffSnapShot;
 
+    #region HEADER SOUNDEFFECT
+    [Space(10)]
+    [Header("SOUND EFFECT")]
+    #endregion
+    public SoundEffectSO doorSound;
+    public SoundEffectSO swordSound;
+    public SoundEffect canonSound;
+    public SoundEffect bigCanonSound;
+
     #region Header Materials
     [Space(10)]
     [Header("Materials")]

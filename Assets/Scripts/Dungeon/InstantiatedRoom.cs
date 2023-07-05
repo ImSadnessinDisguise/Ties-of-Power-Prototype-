@@ -16,6 +16,16 @@ public class InstantiatedRoom : MonoBehaviour
     
     private BoxCollider2D boxCollider2D;
 
+    #region Header Object Reference
+    [Space(10)]
+    [Header("Object Reference")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Populate with environment child placeholder game object")]
+    #endregion
+    [SerializeField] private GameObject environmentGameObject;
+
+
     private void Awake()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
@@ -295,6 +305,22 @@ public class InstantiatedRoom : MonoBehaviour
     public void EnableRoomCollider()
     {
         boxCollider2D.enabled = true;
+    }
+
+    public void ActivateEnvironmentGameObjects()
+    {
+        if (environmentGameObject != null)
+        {
+            environmentGameObject.SetActive(true);
+        }
+    }
+
+    public void DeactivateEnvironmentGameObjects()
+    {
+        if (environmentGameObject != null)
+        {
+            environmentGameObject.SetActive(false);
+        }
     }
 
 

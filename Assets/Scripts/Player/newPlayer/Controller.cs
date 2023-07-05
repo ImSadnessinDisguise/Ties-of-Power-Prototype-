@@ -28,6 +28,7 @@ public class Controller : MonoBehaviour,IShopCustomer
     private float dashCounter;
     private float dashCoolCounter;
     [HideInInspector] public bool isRolling = false;
+    private bool isPlayerMovementDisabled = false;
     //[HideInInspector] public AudioSourcesIngame audioSource;
 
     Vector2 direction;
@@ -47,6 +48,9 @@ public class Controller : MonoBehaviour,IShopCustomer
 
     private void Update()
     {
+        if (isPlayerMovementDisabled)
+            return;
+
         Move();
 
         SpriteFlip();
@@ -138,6 +142,17 @@ public class Controller : MonoBehaviour,IShopCustomer
                 }
             }
         }
+    }
+
+    public void EnablePlayer()
+    {
+        isPlayerMovementDisabled = false;
+    }
+
+    public void DisablePlayer()
+    {
+        isPlayerMovementDisabled = true;
+        animator.SetBool("move", false);
     }
 
     /*private void PlayerSlashSoundEffect()

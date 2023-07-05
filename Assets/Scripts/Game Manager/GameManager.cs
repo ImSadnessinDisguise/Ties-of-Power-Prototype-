@@ -3,10 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 [DisallowMultipleComponent]
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
+    #region Header GAMEOBJECT REFERENCES
+    [Space(10)]
+    [Header("GAMEOBJECT REFERENCES")]
+    #endregion Header GAMEOBJECT REFERENCES
+    #region Tooltip
+    [Tooltip("Populate with pause menu gameobject in hierarchy")]
+    #endregion Tooltip
+    [SerializeField] private GameObject pauseMenu;
+    #region Tooltip
+    [Tooltip("Populate with the MessageText textmeshpro component in the FadeScreenUI")]
+    #endregion Tooltip
+    [SerializeField] private TextMeshProUGUI messageTextTMP;
+    #region Tooltip
+    [Tooltip("Populate with the FadeImage canvasgroup component in the FadeScreenUI")]
+    #endregion Tooltip
+    [SerializeField] private CanvasGroup canvasGroup;
+
+
     #region Header DUNGEON LEVELS
     [Space(10)]
     [Header("Dungeon Levels")]
@@ -80,6 +99,10 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         previousGamestate = Gamestate.gameStarted;
         gameState = Gamestate.gameStarted;
+
+        //Set screen to black
+        StartCoroutine(Fade(0f, 1f, 0f, Color.black));
+
     }
 
     // Update is called once per frame
@@ -215,6 +238,57 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         // get nearest spawn point in room nearest to player
         player.gameObject.transform.position = HelperUtilities.GetSpawnPositionNearestToPlayer(player.gameObject.transform.position);
+
+        StartCoroutine(DisplayDungeonLevelText());
+    }
+
+    private IEnumerator DisplayDungeonLevelText()
+    {
+        //Set Screen to black
+        StartCoroutine(Fade(0f, 1f, 0f, Color.black));
+
+        GetPlayer().playerControl.DisablePlayer();
+
+        string messageText = "Area " + (currentDungeonLevelListIndex + 1).ToString() + "\n\n" + dungeonLevelList
+            [currentDungeonLevelListIndex].levelName.ToUpper();
+
+        yield return StartCoroutine(DisplayMessageRoutine(messageText, Color.white, 2f));
+
+        GetPlayer().playerControl.EnablePlayer();
+
+        //Fade In
+        yield return StartCoroutine(Fade(1f, 0f, 2f, Color.black));
+
+    }
+
+    private IEnumerator DisplayMessageRoutine(string text, Color textColor, float displaySeconds)
+    {
+        //Set text
+        messageTextTMP.SetText(text);
+        messageTextTMP.color = textColor;
+
+        if(displaySeconds > 0f)
+        {
+            float timer = displaySeconds;
+
+            while (timer > 0f && !Input.GetKeyDown(KeyCode.Return))
+            {
+                {
+                    timer -= Time.deltaTime;
+                    yield return null;
+                }
+            }
+        }
+        else
+        {
+            while (!Input.GetKeyDown(KeyCode.Return))
+            {
+                yield return null;
+            }
+        }
+
+        yield return null;
+        messageTextTMP.SetText("");
     }
 
     /// <summary>
@@ -229,9 +303,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         bossRoom.UnlockDoors(0f);
 
         //Wait for 2 Secondss
-        yield return new WaitForSeconds(2f);    
+        yield return new WaitForSeconds(2f);
 
-        Debug.Log("Boss Stage - Find and destroy the boss");
+        //fade in canvas to display text message
+        yield return StartCoroutine(Fade(0f, 1f, 2f, new Color(0f, 0f, 0f, 0.4f)));
+
+        //Display boss message
+        yield return StartCoroutine(DisplayMessageRoutine("Well Done" + "\n\nNow Find the boss and free your friend", Color.white, 5f));
+
+        //Set Fade out
+        yield return StartCoroutine(Fade(1f, 0f, 2f, new Color(0f, 0f, 0f, 0.4f)));
     }
 
     private IEnumerator LevelCompleted()
@@ -241,7 +322,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         yield return new WaitForSeconds(2f);
 
-        Debug.Log("Level Completed - press return to progress to the next level");
+        // Fade in canvas to display text message
+        yield return StartCoroutine(Fade(0f, 1f, 2f, new Color(0f, 0f, 0f, 0.4f)));
+
+        // Display level completed
+        yield return StartCoroutine(DisplayMessageRoutine("WELL DONE " + GameResources.Instance.currentPlayer.playerName + "! \n\nYOU'VE MANAGED TO FREE YOUR COMRADE", Color.white, 5f));
+
+        yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN\n\nTO MOVE FURTHER NEAR THE CASTLE", Color.white, 5f));
+
+        // Fade out canvas
+        yield return StartCoroutine(Fade(1f, 0f, 2f, new Color(0f, 0f, 0f, 0.4f)));
 
         while (!Input.GetKeyDown(KeyCode.Return))
         {
@@ -254,6 +344,21 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
 
         PlayDungeonLevel(currentDungeonLevelListIndex);
+    }
+
+    private IEnumerator Fade(float startFadeAlpha, float targetFadeAlpha, float fadeSeconds, Color backGroundColor)
+    {
+        Image image = canvasGroup.GetComponent<Image>();
+        image.color = backGroundColor;
+
+        float time = 0;
+
+        while (time <= fadeSeconds)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startFadeAlpha, targetFadeAlpha, time / fadeSeconds);
+            yield return null;
+        }
     }
 
     private IEnumerator GameWon()

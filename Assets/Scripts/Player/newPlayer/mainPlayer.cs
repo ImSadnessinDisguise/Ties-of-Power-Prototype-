@@ -54,6 +54,10 @@ public class mainPlayer : MonoBehaviour
 
         if (healthEventArgs.healthAmount <= 0)
         {
+            GameManager.Instance.GetPlayer().animator.SetTrigger("die");
+
+            new WaitForSeconds(2);
+
             destroyedEvent.CallDestroyedEvent(true);
         }
     }
