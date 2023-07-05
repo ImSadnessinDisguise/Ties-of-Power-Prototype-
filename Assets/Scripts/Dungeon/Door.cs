@@ -13,11 +13,10 @@ public class Door : MonoBehaviour
     #region Tooltip
     [Space(10)]
     [Tooltip("Populate with the box collider component on the DoorCollider gameObject")]
-    [SerializeField] private BoxCollider2D doorCollider;
     #endregion
-
+    [SerializeField] private BoxCollider2D doorCollider;
     [HideInInspector] public bool isBossRoomDoor = false;
-    private BoxCollider2D doorTrigger;
+    [SerializeField] private BoxCollider2D doorTrigger;
     private bool isOpen = false;
     private bool previouslyOpened = false;
     private Animator animator;
@@ -28,7 +27,7 @@ public class Door : MonoBehaviour
         doorCollider.enabled = false;
 
         //load component
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         doorTrigger = GetComponent<BoxCollider2D>();
     }
 

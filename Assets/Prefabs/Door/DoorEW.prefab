@@ -83,8 +83,6 @@ GameObject:
   - component: {fileID: 1781526231629248324}
   - component: {fileID: 1781526231629248325}
   - component: {fileID: 1781526231629248323}
-  - component: {fileID: 4616723448907096264}
-  - component: {fileID: 899919105208889310}
   m_Layer: 0
   m_Name: Renderer
   m_TagString: Untagged
@@ -171,56 +169,16 @@ Animator:
   m_GameObject: {fileID: 1781526231629248326}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7ff6b09aa56cf2e4d8242c81bc6562dd, type: 2}
+  m_Controller: {fileID: 9100000, guid: b6f6c78714c407d429fdc38d92047455, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4616723448907096264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781526231629248326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c26581b6f3da648ade6dbc848ae4ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorCollider: {fileID: 1781526231978128783}
-  isBossRoomDoor: 0
---- !u!61 &899919105208889310
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781526231629248326}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.857143, y: 6.857143}
-    newSize: {x: 6.857143, y: 6.857143}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.857143, y: 6.857143}
-  m_EdgeRadius: 0
 --- !u!1 &1781526231782849259
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781526231782849271}
   - component: {fileID: 1781526231782849258}
+  - component: {fileID: 8305354181724757986}
   m_Layer: 0
   m_Name: DoorEW
   m_TagString: Untagged
@@ -245,7 +204,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781526231782849259}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27, y: -7.5, z: -1}
   m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -270,16 +229,31 @@ BoxCollider2D:
   m_Offset: {x: -0.12228489, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.857143, y: 6.857143}
+    newSize: {x: 6.857143, y: 6.857143}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 3.5664997, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8305354181724757986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781526231782849259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c26581b6f3da648ade6dbc848ae4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorCollider: {fileID: 1781526231978128783}
+  isBossRoomDoor: 0
+  doorTrigger: {fileID: 0}
 --- !u!1 &1781526231978128769
 GameObject:
   m_ObjectHideFlags: 0
