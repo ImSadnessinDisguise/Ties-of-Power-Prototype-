@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   soundEffectName: Slash
-  soundPrefab: {fileID: 0}
-  soundEffectClip: {fileID: 0}
+  soundPrefab: {fileID: 2218651960724534811, guid: e858a95e1a7095044ae7a8225c11096b,
+    type: 3}
+  soundEffectClip: {fileID: 8300000, guid: d158dafb3cff330469161ceca6e16003, type: 3}
   soundEffectPitchRandomVariationMin: 0.8
-  soundEffectPitchRandomVariationMax: 1.2
+  soundEffectPitchRandomVariationMax: 1.04
   soundEffectVolume: 1

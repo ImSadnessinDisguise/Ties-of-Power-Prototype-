@@ -5,6 +5,25 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - roomNodeTypeList: {instanceID: 0}
+  - currentPlayer: {instanceID: 0}
+  - soundsMasterMixerGroup: {instanceID: 0}
+  - musicMasterMixerGroup: {instanceID: 0}
+  - musicOnFullSnapShot: {instanceID: 0}
+  - musicLowSnapShot: {instanceID: 0}
+  - musicOffSnapShot: {instanceID: 0}
+  - doorSound: {instanceID: 0}
+  - swordSound: {instanceID: 0}
+  - canonSound: {instanceID: 0}
+  - bigCanonSound: {instanceID: 0}
+  - dimmedMaterial: {instanceID: 0}
+  - litMaterial: {instanceID: 0}
+  - variableLitShader: {instanceID: 0}
+  - materializeShader: {instanceID: 0}
+  - preferredEnemyPathTile: {instanceID: 0}
+  - chestItemPrefab: {instanceID: 0}
+  - heartIcon: {instanceID: 0}
+  - heartPrefab: {instanceID: 0}
+  - bloodSplat: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

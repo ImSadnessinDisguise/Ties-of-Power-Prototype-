@@ -81,9 +81,11 @@ public class ShopManager : MonoBehaviour
         switch(upgrade.itemName)
         {
             case "Health":
-                health.AddHealth(20);
+               GameManager.Instance.GetPlayer().health.AddHealth(20);
                 break;
+            
 
+    
             default:
                 break;
                 

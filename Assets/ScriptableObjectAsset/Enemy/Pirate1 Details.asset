@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25000f2e156a7d948830020bab04e4d7, type: 3}
   m_Name: Pirate1 Details
   m_EditorClassIdentifier: 
-  enemyName: Pirate 1 Details
+  enemyName: Pirate 1
   enemyPrefab: {fileID: 3865679675562783027, guid: 09ac973dcfbb0d74a83b9feac8360b3b,
     type: 3}
   chaseDistance: 10

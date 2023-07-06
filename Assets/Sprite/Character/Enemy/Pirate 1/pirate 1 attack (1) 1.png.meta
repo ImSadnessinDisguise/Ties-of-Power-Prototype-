@@ -107,10 +107,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_0
       rect:
         serializedVersion: 2
-        x: 107
+        x: 280
         y: 679
-        width: 293
-        height: 355
+        width: 561
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_1
       rect:
         serializedVersion: 2
-        x: 472
+        x: 894
         y: 679
-        width: 252
-        height: 355
+        width: 236
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_2
       rect:
         serializedVersion: 2
-        x: 790
-        y: 681
-        width: 236
-        height: 355
+        x: 1196
+        y: 679
+        width: 252
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_3
       rect:
         serializedVersion: 2
-        x: 1079
+        x: 1520
         y: 679
-        width: 561
-        height: 355
+        width: 293
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_4
       rect:
         serializedVersion: 2
-        x: 106
+        x: 624
         y: 246
-        width: 553
-        height: 355
+        width: 539
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: pirate 1 attack (1) 1_5
       rect:
         serializedVersion: 2
-        x: 757
+        x: 1261
         y: 246
-        width: 539
-        height: 355
+        width: 553
+        height: 351
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

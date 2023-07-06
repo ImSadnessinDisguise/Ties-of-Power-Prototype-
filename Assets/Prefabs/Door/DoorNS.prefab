@@ -205,8 +205,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2105760597
-  m_SortingLayer: 5
+  m_SortingLayerID: 879703667
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 681868696, guid: 23ef93c15c3a8974ca75e28959d97ea5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -279,3 +279,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorCollider: {fileID: 7546863947840600086}
   isBossRoomDoor: 0
+  doorTrigger: {fileID: 0}

@@ -12,7 +12,6 @@ public class RoomTemplateSO : ScriptableObject
     [Space(10)]
     [Header("Room Prefab")]
 
-
     #endregion
 
     public GameObject prefab;
@@ -76,8 +75,8 @@ public class RoomTemplateSO : ScriptableObject
 
 #if UNITY_EDITOR
 
-    //Validate SO fields
 
+    //Validate SO fields
     private void OnValidate()
     {
         //set unique guid if empty or prefab changes
@@ -115,7 +114,7 @@ public class RoomTemplateSO : ScriptableObject
                     nameof(roomEnemySpawnParameters.maxSpawnInterval), roomEnemySpawnParameters.maxSpawnInterval, true);
 
                 bool isEnemyTypeListForDungeonLevel = false;
-  
+
                 //Validate EnemyType List
                 foreach (SpawnableObjectsByLevel<EnemyDetailsSO> dungeonObjectsByLevel in enemiesByLevelList)
                 {
@@ -142,10 +141,13 @@ public class RoomTemplateSO : ScriptableObject
 
         //Check Spawan Position Populated
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(spawnPositionArray), spawnPositionArray);
+    }
 #endif
         #endregion
 
-    }
+    
 
 }
+
+
 

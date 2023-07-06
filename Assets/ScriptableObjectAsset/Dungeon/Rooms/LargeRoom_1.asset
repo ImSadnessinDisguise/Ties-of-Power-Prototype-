@@ -49,6 +49,22 @@ MonoBehaviour:
     doorwayCopyTileHeight: 7
     isConnected: 0
     isUnavailable: 0
-  spawnPositionArray: []
-  enemiesByLevelList: []
-  roomEnemySpawnParametersList: []
+  spawnPositionArray:
+  - {x: -4, y: -4}
+  - {x: 17, y: 2}
+  - {x: -3, y: 4}
+  enemiesByLevelList:
+  - dungeonLevel: {fileID: 11400000, guid: 6da5ad2a1a66831478930d24958f139d, type: 2}
+    spawnableObjectRatioList:
+    - dungeonObject: {fileID: 11400000, guid: cbfbc50dfca814d4ba3caefb2a5f548e, type: 2}
+      ratio: 1
+    - dungeonObject: {fileID: 11400000, guid: c021e8be126457042802f0b6bb3a592d, type: 2}
+      ratio: 2
+  roomEnemySpawnParametersList:
+  - dungeonLevel: {fileID: 11400000, guid: 6da5ad2a1a66831478930d24958f139d, type: 2}
+    minTotalEnemiesToSpawn: 5
+    maxTotalEnemiesToSpawn: 13
+    minConcurrentEnemies: 4
+    maxConcurrentEnemies: 6
+    minSpawnInterval: 1
+    maxSpawnInterval: 2

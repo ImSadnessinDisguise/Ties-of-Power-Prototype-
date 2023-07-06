@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 #region REQUIRED COMPONENTS
@@ -56,7 +54,7 @@ public class mainPlayer : MonoBehaviour
         {
             GameManager.Instance.GetPlayer().animator.SetTrigger("die");
 
-            new WaitForSeconds(2);
+            new WaitForSeconds(2f);
 
             destroyedEvent.CallDestroyedEvent(true);
         }

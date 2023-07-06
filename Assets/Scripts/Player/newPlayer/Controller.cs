@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(mainPlayer))]
@@ -99,7 +97,7 @@ public class Controller : MonoBehaviour,IShopCustomer
     {
         animator.SetTrigger("attack");
         //attackArea.SetActive(attacking);
-        //PlayerSlashSoundEffect();
+        PlayerSlashSoundEffect();
     }
 
     public void Move()
@@ -155,10 +153,14 @@ public class Controller : MonoBehaviour,IShopCustomer
         animator.SetBool("move", false);
     }
 
-    /*private void PlayerSlashSoundEffect()
+    private void PlayerSlashSoundEffect()
     {
-        SoundEffectManager.Instance.PlaySoundEffect(audioSource.slashSoundEffect);
-    }*/
+        SoundEffectManager.Instance.PlaySoundEffect(GameResources.Instance.swordSound);
+    }
+    private void PlayRollSoundEffect()
+    {
+
+    }
 
     private void Dash()
     {
@@ -171,6 +173,7 @@ public class Controller : MonoBehaviour,IShopCustomer
                 animator.SetTrigger("Roll");
 
                 isRolling = true;
+                PlayRollSoundEffect();
             }
         }
 

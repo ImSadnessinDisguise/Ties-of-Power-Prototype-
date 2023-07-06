@@ -76,6 +76,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         StaticEventHandler.OnRoomChanged += StaticEventHandler_OnRoomChanged;
 
         StaticEventHandler.OnRoomEnemiesDefeated += StaticEventHandler_OnRoomEnemiesDefeated;
+
+        // Subscribe to player destroyed event
+        player.destroyedEvent.OnDestroyed += Player_OnDestroyed;
     }
 
     private void OnDisable()
@@ -83,6 +86,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         StaticEventHandler.OnRoomChanged -= StaticEventHandler_OnRoomChanged;
 
         StaticEventHandler.OnRoomEnemiesDefeated -= StaticEventHandler_OnRoomEnemiesDefeated;
+
+        // Unubscribe from player destroyed event
+        player.destroyedEvent.OnDestroyed -= Player_OnDestroyed;
     }
 
     private void StaticEventHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
@@ -93,6 +99,15 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     private void StaticEventHandler_OnRoomEnemiesDefeated(RoomEnemiesDefeatedArgs roomEnemiesDefeatedArgs)
     {
         RoomEnemiesDefeated();
+    }
+
+    /// <summary>
+    /// Handle player destroyed event
+    /// </summary>
+    private void Player_OnDestroyed(DestroyedEvent destroyedEvent, DestroyedEventArgs destroyedEventArgs)
+    {
+        previousGamestate = gameState;
+        gameState = Gamestate.gameLost;
     }
 
     private void Start()
@@ -378,9 +393,26 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         previousGamestate = Gamestate.gameLost;
 
-        Debug.Log("Game Lost");
+        // Disable player
+        GetPlayer().playerControl.DisablePlayer();
 
-        yield return new WaitForSeconds(10f);
+        // Wait 1 seconds
+        yield return new WaitForSeconds(1f);
+
+        // Fade Out
+        yield return StartCoroutine(Fade(0f, 1f, 2f, Color.black));
+
+        // Disable enemies (FindObjectsOfType is resource hungry - but ok to use in this end of game situation)
+        Enemy[] enemyArray = GameObject.FindObjectsOfType<Enemy>();
+        foreach (Enemy enemy in enemyArray)
+        {
+            enemy.gameObject.SetActive(false);
+        }
+
+        // Display game lost
+        yield return StartCoroutine(DisplayMessageRoutine("You have fallen in battle " + "\n\nPrepare further to challenge Illoit", Color.white, 2f));
+
+        yield return StartCoroutine(DisplayMessageRoutine("PRESS RETURN TO RESTART TO THE CAMP", Color.white, 0f));
 
         gameState = Gamestate.restartGame;
     }

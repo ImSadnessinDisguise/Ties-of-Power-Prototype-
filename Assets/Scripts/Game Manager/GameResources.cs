@@ -76,6 +76,7 @@ public class GameResources : MonoBehaviour
     public SoundEffectSO swordSound;
     public SoundEffect canonSound;
     public SoundEffect bigCanonSound;
+    public SoundEffect rollSound;
 
     #region Header Materials
     [Space(10)]

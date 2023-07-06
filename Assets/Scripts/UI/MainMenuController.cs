@@ -15,7 +15,7 @@ public class MainMenuController : MonoBehaviour
 
     public void newGameDialogYes()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        SceneManager.LoadScene("CutScene");
     }
 
     public void LoadGameDialogYes()

@@ -107,10 +107,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 665
-        width: 326
-        height: 343
+        x: 38
+        y: 677
+        width: 409
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_1
       rect:
         serializedVersion: 2
-        x: 348
-        y: 683
-        width: 308
-        height: 343
+        x: 506
+        y: 674
+        width: 376
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +149,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_2
       rect:
         serializedVersion: 2
-        x: 697
+        x: 913
         y: 666
         width: 310
-        height: 343
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_3
       rect:
         serializedVersion: 2
-        x: 1036
-        y: 674
-        width: 376
-        height: 343
+        x: 1264
+        y: 683
+        width: 308
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_4
       rect:
         serializedVersion: 2
-        x: 1473
-        y: 679
-        width: 409
-        height: 343
+        x: 1584
+        y: 665
+        width: 326
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_5
       rect:
         serializedVersion: 2
-        x: 10
-        y: 150
-        width: 430
-        height: 343
+        x: 39
+        y: 149
+        width: 312
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_6
       rect:
         serializedVersion: 2
-        x: 464
-        y: 145
-        width: 340
-        height: 343
+        x: 411
+        y: 151
+        width: 311
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_7
       rect:
         serializedVersion: 2
-        x: 842
+        x: 763
         y: 149
         width: 315
-        height: 343
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_8
       rect:
         serializedVersion: 2
-        x: 1198
-        y: 151
-        width: 311
-        height: 343
+        x: 1116
+        y: 145
+        width: 340
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: Pirate 1 Run (2)_9
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 149
-        width: 312
-        height: 343
+        x: 1480
+        y: 150
+        width: 430
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,6 +326,7 @@ TextureImporter:
     nameFileIdTable:
       Pirate 1 Run (2)_3: -277360623
       Pirate 1 Run (2)_8: -1063437612
+      Pirate 1 Run (2)_10: 303814442
       Pirate 1 Run (2)_7: 1598664812
       Pirate 1 Run (2)_2: -1355855363
       Pirate 1 Run (2)_4: 2011363864

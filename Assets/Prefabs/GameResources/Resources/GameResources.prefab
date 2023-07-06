@@ -56,6 +56,10 @@ MonoBehaviour:
     type: 2}
   musicOffSnapShot: {fileID: -3084740370723268673, guid: 2ac509b551addfb48950fbdc0d9cefb4,
     type: 2}
+  doorSound: {fileID: 0}
+  swordSound: {fileID: 11400000, guid: 9e111bf4c4b8019429a3c88ccc553fdf, type: 2}
+  canonSound: {fileID: 0}
+  bigCanonSound: {fileID: 0}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
   litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   variableLitShader: {fileID: -6465566751694194690, guid: 74a4e03513c12e2499fac65b4230a489,
